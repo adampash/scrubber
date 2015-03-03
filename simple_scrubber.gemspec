@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'scrubber/version'
+require 'simple_scrubber/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "scrubber"
-  spec.version       = Scrubber::VERSION
+  spec.name          = "simple_scrubber"
+  spec.version       = SimpleScrubber::VERSION
   spec.authors       = ["Adam Pash"]
   spec.email         = ["adam.pash@gmail.com"]
   spec.summary       = %q{Simple gem to scrub sensitive data from text}

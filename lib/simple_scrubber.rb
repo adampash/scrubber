@@ -1,6 +1,6 @@
-require "scrubber/version"
+require "simple_scrubber/version"
 
-module Scrubber
+module SimpleScrubber
   def self.scrub(text, types=[])
     if types.include? :email
       email_re = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i
