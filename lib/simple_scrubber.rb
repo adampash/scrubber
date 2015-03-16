@@ -10,8 +10,12 @@ module SimpleScrubber
     if types.include? :phone
       phone_re = /\b(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?\b/
       match = text.match phone_re
-      area_code = match[1] || match[2]
-      text.gsub!(phone_re, "#{area_code}-xxx-xxxx")
+      unless match.nil?
+        area_code = match[1] || match[2]
+        text.gsub!(phone_re, "#{area_code}-xxx-xxxx")
+      else
+        text
+      end
     end
 
     text
